@@ -10,7 +10,7 @@ var insultsHealthy = {
     lowSugar: "You get scared on Halloween, and it isn't because of the ghosts.",
     lowSodium: "You literally have no taste.",
 }
-var searchTerm = 
+var searchTerm = ;
 var insultAndyMuller = "Andy, nobody cares about what you eat in class.";
 var pixabayAPI = "12579168-7c66fd8723598ff87605657fc";
 var nutritionixAPI = "43a4724158ea08c8e5b9070c4f8ecd5f";
