@@ -68,7 +68,9 @@ body {
 }
 
 .masthead-brand {
-  margin-bottom: 0;
+  color:#000;
+  font-size: 40px;
+  margin-left: 15px;
 }
 
 .nav-masthead .nav-link {
@@ -89,8 +91,9 @@ body {
 }
 
 .nav-masthead .active {
-  color: #fff;
+  color: #b;
   border-bottom-color: #fff;
+
 }
 
 @media (min-width: 48em) {
