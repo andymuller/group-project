@@ -16,6 +16,8 @@ var pixabayAPI = "12579168-7c66fd8723598ff87605657fc";
 var nutritionixAPI = "43a4724158ea08c8e5b9070c4f8ecd5f";
 var imageQuery = "https://pixabay.com/api/?key=" + pixabayAPI + searchTerm + "&image_type=photo";
 var nutritionQuery = "https://api.nutritionix.com/v1_1/search/" + searchTerm + "?results=0%3A01&cal_min=0&cal_max=50000&fields=*&appId=c3659b4f&appKey=" + nutritionixAPI;
+$(".btn").click(function(event){
+    event.preventDefault();
 
 function displayNutrition(){
     $.ajax({
@@ -23,5 +25,17 @@ function displayNutrition(){
         method: "GET"
     }).then(function(response){
         console.log(response);
+        var servingSize = $("<p>").text("Serving Size: " + response.nf_serving_size_qty + ": " + response.nf_serving_size_unit);
+        var calories = $("<p>").text("Calories" + response.nf_calories);
+
     })
 }
+function displayImage(){
+    $.ajax({
+        url: imageQuery,
+        method: "GET"
+    }).then(function(result){
+        console.log(result);
+    })
+}
+})
