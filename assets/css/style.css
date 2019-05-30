@@ -82,6 +82,9 @@ margin-bottom: 2rem;
 
 .masthead-brand {
 margin-bottom: 0;
+position: relative;
+ bottom: 185px;
+ right: 350px;
 }
 
 .nav-masthead .nav-link {
