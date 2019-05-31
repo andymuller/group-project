@@ -27,6 +27,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
     }).then(function(response){
         console.log(response);
         console.log(response.hits[0].fields.item_name);
+
         var foodName = response.hits[0].fields.item_name;
         var calories = response.hits[0].fields.nf_calories;
         var totalFat = response.hits[0].fields.nf_total_fat;
@@ -36,6 +37,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         var carbohydrate = response.hits[0].fields.nf_total_carbohydrate;
         var fiber = response.hits[0].fields.nf_dietary_fiber;
         var sugar = response.hits[0].fields.nf_sugars;
+
     })
     $.ajax({
         url: imageQuery,
@@ -46,6 +48,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
 }
 $("#search-button").click(function(event){
     event.preventDefault();
+    $(".inner-cover").animate({ top: "-= 200"}, "normal");
     var searchTerm = $("#food-search").val().trim();
     displayNutrition(searchTerm);
 })
