@@ -27,17 +27,20 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
     }).then(function(response){
         console.log(response);
         console.log(response.hits[0].fields.item_name);
-
-        var foodName = response.hits[0].fields.item_name;
-        var calories = response.hits[0].fields.nf_calories;
-        var totalFat = response.hits[0].fields.nf_total_fat;
-        var saturatedFat = response.hits[0].fields.nf_saturated_fat;
-        var cholesterol = response.hits[0].fields.nf_cholesterol;
-        var sodium = response.hits[0].fields.nf_sodium;
-        var carbohydrate = response.hits[0].fields.nf_total_carbohydrate;
-        var fiber = response.hits[0].fields.nf_dietary_fiber;
-        var sugar = response.hits[0].fields.nf_sugars;
-
+        $(".inner-cover").animate({ top: "-= 200"}, "normal");
+        var foodName = $("<p>").text(response.hits[0].fields.item_name);
+        var calories = $("<p>").text("Calories: "+response.hits[0].fields.nf_calories);
+        var totalFat = $("<p>").text("Total Fat: "+response.hits[0].fields.nf_total_fat+"g");
+        var saturatedFat = $("<p>").text("Saturated Fat: "+response.hits[0].fields.nf_saturated_fat+"g");
+        var cholesterol = $("<p>").text("Cholesterol: "+response.hits[0].fields.nf_cholesterol+"mg");
+        var sodium = $("<p>").text("Sodium: "+response.hits[0].fields.nf_sodium+"mg");
+        var carbohydrate = $("<p>").text("Total Carbohydrates: "+response.hits[0].fields.nf_total_carbohydrate+"g");
+        var fiber = $("<p>").text("Dietary Fiber: "+response.hits[0].fields.nf_dietary_fiber+"g");
+        var sugar = $("<p>").text("Sugars: "+response.hits[0].fields.nf_sugars+"g");
+        var protien = $("<p>").text("Protien"+response.hits[0].fields.nf_protien+"g");
+        $(".data-div").empty();
+        $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol,
+            sodium, carbohydrate, fiber, sugar, protien);
     })
     $.ajax({
         url: imageQuery,
@@ -48,7 +51,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
 }
 $("#search-button").click(function(event){
     event.preventDefault();
-    $(".inner-cover").animate({ top: "-= 200"}, "normal");
+    
     var searchTerm = $("#food-search").val().trim();
     displayNutrition(searchTerm);
 })
