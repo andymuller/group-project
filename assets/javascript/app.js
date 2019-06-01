@@ -45,7 +45,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                 var totalFat = response.hits[0].fields.nf_total_fat;
                 var cholesterol = response.hits[0].fields.nf_cholesterol/5+3;
                 var sodium = response.hits[0].fields.nf_sodium/50+3;
-                var carbohydrate = response.hits[0].fields.nf_total_carbohydrate/5+3;
+                var carbohydrate = response.hits[0].fields.nf_total_carbohydrate;
                 if(response === "dragonfruit"){
                     var insult = $("<p>");
                     insult.text(insultAndyMuller);
