@@ -127,6 +127,37 @@ position: relative;
 left:250px;
 
 }
+.image-div {
+  height: 350px;
+  width: 350px;
+  margin: 0;
+  padding: 0;
+  position: absolute; 
+  bottom: 160px;
+  right: 540px;
+}
+
+.data-div {
+  height: 390px;
+  width: 380px;
+  margin: 0;
+  padding: 0;
+  position: absolute; 
+  bottom: 160px;
+  right: 120px;
+
+}
+
+.insult-div {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  padding: 0;
+  position: absolute; 
+  bottom: 120px;
+  right: 506px;
+
+}
 
 .slide-in-top {
 	-webkit-animation: slide-in-top .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0s ;
