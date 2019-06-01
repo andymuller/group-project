@@ -117,4 +117,5 @@ $("#search-button").click(function(event){
     event.preventDefault();
     var searchTerm = $("#food-search").val().trim();
     displayNutrition(searchTerm);
+    insult();
 })
