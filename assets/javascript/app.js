@@ -70,22 +70,22 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                         $(".insult-div").append(insult);
                     }
                 }else if(totalFat && cholesterol && sodium && carbohydrate < 13){
-                    if(totalFat <= cholesterol || sodium || carbohydrate){
+                    if(totalFat <= cholesterol && sodium && carbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsHealthy.lowFat);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult); 
-                    }else if(cholesterol <= totalFat || sodium || carbohydrate){
+                    }else if(cholesterol <= totalFat && sodium && carbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsHealthy.lowCholesterol);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(sodium <= totalFat || cholesterol || carbohydrate){
+                    }else if(sodium <= totalFat && cholesterol && carbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsHealthy.lowSodium);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(carbohydrate <= totalFat || sodium || cholesterol){
+                    }else if(carbohydrate <= totalFat && sodium && cholesterol){
                         var insult = $("<p>");
                         insult.text(insultsHealthy.lowCarbs);
                         $(".insult-div").empty();
