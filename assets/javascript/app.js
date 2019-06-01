@@ -43,8 +43,8 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
             carbohydrate, fiber, sugar, protein);
             function insult(){
                 var totalFat = response.hits[0].fields.nf_total_fat;
-                var cholesterol = response.hits[0].fields.nf_cholesterol/10+3;
-                var sodium = response.hits[0].fields.nf_sodium/80+3;
+                var cholesterol = response.hits[0].fields.nf_cholesterol/5+3;
+                var sodium = response.hits[0].fields.nf_sodium/50+3;
                 var carbohydrate = response.hits[0].fields.nf_total_carbohydrate/5+3;
                 if(response === "dragonfruit"){
                     var insult = $("<p>");
