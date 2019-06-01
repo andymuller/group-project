@@ -48,6 +48,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
     }).then(function(result){
         console.log(result);
         var image = $("<img>").attr("src", result.hits[0].webformatURL);
+        image.addClass("flip-in-hor-top");
         $(".image-div").empty();
         $(".image-div").append(image);
     })
