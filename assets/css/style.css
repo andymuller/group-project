@@ -127,6 +127,15 @@
   left:250px;
   
   }
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  height: 300px;
+  position: relative;
+  right: 340px;
+  bottom: 190px;
+}
   .image-div {
     height: 350px;
     width: 350px;
