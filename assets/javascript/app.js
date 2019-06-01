@@ -97,7 +97,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                     }
                 }
             }insult(food);
-        }        
+        }
     );
     $.ajax({
         url: imageQuery,
