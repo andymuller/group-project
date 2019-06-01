@@ -41,6 +41,18 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         $(".data-div").empty();
         $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol, sodium,
             carbohydrate, fiber, sugar, protein);
+        
+        foodName.addClass("scale-in-ver-center");
+            calories.addClass("scale-in-ver-center");
+            totalFat.addClass("scale-in-ver-center");
+            saturatedFat.addClass("scale-in-ver-center");
+            cholesterol.addClass("scale-in-ver-center");
+            sodium.addClass("scale-in-ver-center");
+            carbohydrate.addClass("scale-in-ver-center");
+            fiber.addClass("scale-in-ver-center");
+            sugar.addClass("scale-in-ver-center");
+            protein.addClass("scale-in-ver-center");
+
     })
     $.ajax({
         url: imageQuery,
