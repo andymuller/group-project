@@ -421,3 +421,65 @@ color: rgba(255,255,255,.5);
 
   }
 
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .bg {
+      background: url("../images/food-image\ \(3\).jpg") no-repeat center center fixed; 
+      background-color: #f5f9fa;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 667px;
+    }
+
+
+    
+    .text-focus-in{
+      width: 400px;
+      text-align: center;
+      margin: auto;
+      font-size: medium;
+    }
+
+    .masthead-brand {
+      margin-right: 20px;
+      margin-top: 50px;
+      margin-bottom: 0;
+      position: relative;
+      bottom: 400px;
+      /* left: 890px; */
+      font-family: sans-serif;
+      text-align: right;
+
+    }
+
+    .form-control {
+      width: 400px;
+      position: relative;
+      margin: auto;
+    }
+  }
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+    
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+}
