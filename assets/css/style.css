@@ -353,7 +353,7 @@ color: rgba(255,255,255,.5);
     margin-top: 20px;
     margin-bottom: 0;
     position: relative;
-    bottom: 400px;
+    bottom: 300px;
     /* left: 890px; */
     font-family: sans-serif;
     text-align: right;
@@ -437,8 +437,6 @@ color: rgba(255,255,255,.5);
       background-size: cover;
       height: 667px;
     }
-
-
     
     .text-focus-in{
       width: 400px;
@@ -448,22 +446,26 @@ color: rgba(255,255,255,.5);
     }
 
     .masthead-brand {
-      margin-right: 20px;
-      margin-top: 50px;
+      margin-left: 350px;
       margin-bottom: 0;
       position: relative;
       bottom: 400px;
       /* left: 890px; */
       font-family: sans-serif;
-      text-align: right;
-
-    }
+      text-align: center;
+  }
 
     .form-control {
       width: 400px;
       position: relative;
       margin: auto;
     }
+
+    .inner-cover {
+      position: relative;
+      left: 180px;
+      /* background-color: rgba(255,255,255,.5); */
+  }
   }
 /* Portrait */
 @media only screen 
@@ -471,7 +473,6 @@ color: rgba(255,255,255,.5);
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
-
     
 }
 
@@ -482,4 +483,41 @@ color: rgba(255,255,255,.5);
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) { 
 
+    .bg {
+      background: url("../images/food-image\ \(3\).jpg") no-repeat center center fixed; 
+      background-color: #f5f9fa;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 667px;
+    }
+    
+    .text-focus-in{
+      width: 400px;
+      text-align: center;
+      margin: auto;
+      font-size: medium;
+    }
+
+    .masthead-brand {
+      margin-left: 350px;
+      margin-bottom: 0;
+      position: relative;
+      bottom: 60px;
+      /* left: 890px; */
+      font-family: sans-serif;
+      text-align: center;
+  }
+
+    .form-control {
+      width: 400px;
+      position: relative;
+      margin: auto;
+    }
+
+    .inner-cover {
+      position: relative;
+      left: 180px;
+  }
 }
