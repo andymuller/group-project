@@ -47,7 +47,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                 var sodium = response.hits[0].fields.nf_sodium;
                 var carbohydrate = response.hits[0].fields.nf_total_carbohydrate;
                 if(totalFat || cholesterol || sodium || carbohydrate >= 13){
-                    if(totalFat >= cholesterol || sodium || carbohydrate){
+                    if(totalFat >= cholesterol && sodium && carbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsUnhealthy.hiFat);
                         $(".insult-div").empty();
