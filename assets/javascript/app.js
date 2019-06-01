@@ -19,7 +19,7 @@ var pixabayAPI = "12579168-7c66fd8723598ff87605657fc";
 
 function displayNutrition(food){
     
-var imageQuery = "https://pixabay.com/api/?key=12579168-7c66fd8723598ff87605657fc&q="+food+"&image_type=photo";
+var imageQuery = "https://pixabay.com/api/?key=" + pixabayAPI +"&q="+ food + "&image_type=photo";
 var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0%3A20&cal_min=0&cal_max=50000&fields=*&appId=c3659b4f&appKey=43a4724158ea08c8e5b9070c4f8ecd5f";
     $.ajax({
         url: nutritionQuery,
@@ -27,32 +27,32 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
     }).then(function(response){
         console.log(response);
         console.log(response.hits[0].fields.item_name);
-        $(".inner-cover").animate({ top: "-= 200"}, "normal");
-        var foodName = $("<p>").text(response.hits[0].fields.item_name);
-        var calories = $("<p>").text("Calories: "+response.hits[0].fields.nf_calories);
-        var totalFat = $("<p>").text("Total Fat: "+response.hits[0].fields.nf_total_fat+"g");
-        var saturatedFat = $("<p>").text("Saturated Fat: "+response.hits[0].fields.nf_saturated_fat+"g");
-        var cholesterol = $("<p>").text("Cholesterol: "+response.hits[0].fields.nf_cholesterol+"mg");
-        var sodium = $("<p>").text("Sodium: "+response.hits[0].fields.nf_sodium+"mg");
-        var carbohydrate = $("<p>").text("Total Carbohydrates: "+response.hits[0].fields.nf_total_carbohydrate+"g");
-        var fiber = $("<p>").text("Dietary Fiber: "+response.hits[0].fields.nf_dietary_fiber+"g");
-        var sugar = $("<p>").text("Sugars: "+response.hits[0].fields.nf_sugars+"g");
-        var protien = $("<p>").text("Protien"+response.hits[0].fields.nf_protien+"g");
-        $(".data-div").empty();
-        $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol,
-            sodium, carbohydrate, fiber, sugar, protien);
+
+        var foodName = response.hits[0].fields.item_name;
+        var calories = response.hits[0].fields.nf_calories;
+        var totalFat = response.hits[0].fields.nf_total_fat;
+        var saturatedFat = response.hits[0].fields.nf_saturated_fat;
+        var cholesterol = response.hits[0].fields.nf_cholesterol;
+        var sodium = response.hits[0].fields.nf_sodium;
+        var carbohydrate = response.hits[0].fields.nf_total_carbohydrate;
+        var fiber = response.hits[0].fields.nf_dietary_fiber;
+        var sugar = response.hits[0].fields.nf_sugars;
+
     })
     $.ajax({
         url: imageQuery,
         method: "GET"
     }).then(function(result){
         console.log(result);
-        var image = result.hits[0].webformatURL;
     })
 }
+$("#search-button").one('click', function(){
+    $(".inner-cover").animate({bottom: "+=300px", left: "-=60px"});
+})
 $("#search-button").click(function(event){
+    $(".data-div").animate({ left: "+=840px"});
+    $(".image-div").animate({ left: "+=500px"});
     event.preventDefault();
-    
     var searchTerm = $("#food-search").val().trim();
     displayNutrition(searchTerm);
 })
