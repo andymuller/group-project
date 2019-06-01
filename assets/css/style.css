@@ -1,5 +1,3 @@
-
-
 .bg {
   background: url("../images/food-image\ \(2\).jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -8,9 +6,9 @@
   background-size: cover;
 }
 
+
 h1 {
   text-align: center;
-  position: relative;
   right: 97px;
   margin-bottom: 30px;
   font-family: "Palatino";
@@ -19,6 +17,12 @@ h1 {
 
 p.lead {
 margin-bottom: 30px;
+}
+
+.text-focus-in{
+  width: 600px;
+  text-align: center;
+  margin: auto;
 }
 
 
@@ -63,7 +67,7 @@ min-height: 100%;
 }
 .site-wrapper-inner {
 display: table-cell;
-vertical-align: top;
+vertical-align: middle;
 }
 .cover-container {
 margin-right: auto;
@@ -86,9 +90,9 @@ margin-bottom: 2rem;
 margin-bottom: 0;
 position: relative;
 bottom: 200px;
-left: 890px;
+/*left: 890px;*/
  font-family: sans-serif;
-
+text-align: right;
 
 
 }
@@ -116,9 +120,9 @@ border-bottom-color: #fff;
 }
 
 .form-control {
-width: 80%;
+width: 700px;
 position: relative;
-left: 58px;
+margin: auto;
 }
 
 .inner-cover {
@@ -260,14 +264,14 @@ left:250px;
 
 
 
-@media (min-width: 48em) {
+/*@media (min-width: 48em) {
 .masthead-brand {
   float: left;
 }
 .nav-masthead {
   float: right;
 }
-}
+}*/
 
 
 
@@ -290,7 +294,7 @@ color: rgba(255,255,255,.5);
 
 
 
-@media (min-width: 40em) {
+/*@media (min-width: 40em) {
 
 .masthead {
   position: fixed;
@@ -310,12 +314,12 @@ color: rgba(255,255,255,.5);
 .cover-container {
   width: 100%; 
 }
-}
+}*/
 
-@media (min-width: 62em) {
+/*@media (min-width: 62em) {
 .masthead,
 .mastfoot,
 .cover-container {
   width: 42rem;
 }
-}
+}*/
