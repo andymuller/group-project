@@ -19,7 +19,7 @@ var pixabayAPI = "12579168-7c66fd8723598ff87605657fc";
 
 function displayNutrition(food){
     
-var imageQuery = "https://pixabay.com/api/?key=" + pixabayAPI +"&q="+ food + "&image_type=photo";
+var imageQuery = "https://pixabay.com/api/?key=12579168-7c66fd8723598ff87605657fc&q="+food+"&image_type=photo";
 var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0%3A20&cal_min=0&cal_max=50000&fields=*&appId=c3659b4f&appKey=43a4724158ea08c8e5b9070c4f8ecd5f";
     $.ajax({
         url: nutritionQuery,
@@ -47,6 +47,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         method: "GET"
     }).then(function(result){
         console.log(result);
+        var image = result.hits[0].webformatURL;
     })
 }
 $("#search-button").click(function(event){
