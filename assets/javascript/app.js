@@ -105,7 +105,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                 $(".insult-div").append(insult);
             }
         }
-    }
+    }console.log(insult);
 $("#search-button").one('click', function(){
     $(".inner-cover").animate({bottom: "+=300px", left: "-=60px"});
     $(".data-div").animate({ left: "+=840px"});
