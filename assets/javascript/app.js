@@ -50,6 +50,8 @@ $("#search-button").one('click', function(){
     $(".inner-cover").animate({bottom: "+=300px", left: "-=60px"});
 })
 $("#search-button").click(function(event){
+    $(".data-div").animate({ left: "+=840px"});
+    $(".image-div").animate({ left: "+=500px"});
     event.preventDefault();
     var searchTerm = $("#food-search").val().trim();
     displayNutrition(searchTerm);
