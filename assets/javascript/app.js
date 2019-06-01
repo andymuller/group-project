@@ -46,9 +46,11 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         console.log(result);
     })
 }
+$("#search-button").one('click', function(){
+    $(".inner-cover").animate({bottom: "+=300px", left: "-=60px"});
+})
 $("#search-button").click(function(event){
     event.preventDefault();
-    $(".inner-cover").animate({ top: "-= 200"}, "normal");
     var searchTerm = $("#food-search").val().trim();
     displayNutrition(searchTerm);
 })
