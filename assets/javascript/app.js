@@ -52,17 +52,17 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                         insult.text(insultsUnhealthy.hiFat);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(cholesterol >= totalFat || sodium || carbohydrate){
+                    }else if(cholesterol >= totalFat && sodium && carbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsUnhealthy.hiCholesterol);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(sodium >= totalFat || cholesterol || carbohydrate){
+                    }else if(sodium >= totalFat && cholesterol && carbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsUnhealthy.hiSodium);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(carbohydrate >= totalFat || sodium || cholesterol){
+                    }else if(carbohydrate >= totalFat && sodium && cholesterol){
                         var insult = $("<p>");
                         insult.text(insultsUnhealthy.hiCarbs);
                         $(".insult-div").empty();
