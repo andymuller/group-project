@@ -37,7 +37,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         var carbohydrate = $("<p>").text("Total Carbohydrates: "+response.hits[0].fields.nf_total_carbohydrate+"g");
         var fiber = $("<p>").text("Dietary Fiber: "+response.hits[0].fields.nf_dietary_fiber+"g");
         var sugar = $("<p>").text("Sugars: "+response.hits[0].fields.nf_sugars+"g");
-        var protein = $("<p>").text("Protien: "+response.hits[0].fields.nf_protein+"g");
+        var protein = $("<p>").text("Protein: "+response.hits[0].fields.nf_protein+"g");
         $(".data-div").empty();
         $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol, sodium,
             carbohydrate, fiber, sugar, protein);
