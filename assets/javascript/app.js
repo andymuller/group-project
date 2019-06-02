@@ -1,13 +1,13 @@
 var insultsUnhealthy = {
     hiFat: "When my car hit you in the crosswalk, you asked if I was okay.",
     hiCholesterol: "I passed by you three times.",
-    hiSugar: "Get out of the doorframes.",
+    hiCarbs: "Get out of the doorframes.",
     hiSodium: "The Dead Sea has turned into a human.",
 }
 var insultsHealthy = {
     lowFat: "Where did the wind take you today?",
     lowCholesterol: "Your stomach has turned into a whoopie cushion.",
-    lowSugar: "You get scared on Halloween, and it isn't because of the ghosts.",
+    lowCarbs: "You get scared on Halloween, and it isn't because of the ghosts.",
     lowSodium: "You literally have no taste.",
 }
 var nutritionixAPI = "43a4724158ea08c8e5b9070c4f8ecd5f";
@@ -19,7 +19,7 @@ var pixabayAPI = "12579168-7c66fd8723598ff87605657fc";
 
 function displayNutrition(food){
     
-var imageQuery = "https://pixabay.com/api/?key=" + pixabayAPI +"&q="+ food + "&image_type=photo";
+var imageQuery = "https://pixabay.com/api/?key=12579168-7c66fd8723598ff87605657fc&q="+food+"&image_type=photo&category=food";
 var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0%3A20&cal_min=0&cal_max=50000&fields=*&appId=c3659b4f&appKey=43a4724158ea08c8e5b9070c4f8ecd5f";
     $.ajax({
         url: nutritionQuery,
@@ -28,27 +28,96 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         console.log(response);
         console.log(response.hits[0].fields.item_name);
 
-        var foodName = response.hits[0].fields.item_name;
-        var calories = response.hits[0].fields.nf_calories;
-        var totalFat = response.hits[0].fields.nf_total_fat;
-        var saturatedFat = response.hits[0].fields.nf_saturated_fat;
-        var cholesterol = response.hits[0].fields.nf_cholesterol;
-        var sodium = response.hits[0].fields.nf_sodium;
-        var carbohydrate = response.hits[0].fields.nf_total_carbohydrate;
-        var fiber = response.hits[0].fields.nf_dietary_fiber;
-        var sugar = response.hits[0].fields.nf_sugars;
-
+        var foodName = $("<p>").text(response.hits[0].fields.item_name);
+        var calories = $("<p>").text("Calories: "+response.hits[0].fields.nf_calories);
+        var totalFat = $("<p>").text("Total Fat: "+response.hits[0].fields.nf_total_fat+"g");
+        var saturatedFat = $("<p>").text("Saturated Fat: "+response.hits[0].fields.nf_saturated_fat+"g");
+        var cholesterol = $("<p>").text("Cholesterol: "+response.hits[0].fields.nf_cholesterol+"mg");
+        var sodium = $("<p>").text("Sodium: "+response.hits[0].fields.nf_sodium+"mg");
+        var carbohydrate = $("<p>").text("Total Carbohydrates: "+response.hits[0].fields.nf_total_carbohydrate+"g");
+        var fiber = $("<p>").text("Dietary Fiber: "+response.hits[0].fields.nf_dietary_fiber+"g");
+        var sugar = $("<p>").text("Sugars: "+response.hits[0].fields.nf_sugars+"g");
+        var protein = $("<p>").text("Protein: "+response.hits[0].fields.nf_protein+"g");
+        $(".data-div").empty();
+        $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol, sodium,
+            carbohydrate, fiber, sugar, protein);
+        $(".text-focus-in").empty();
+        $(".cover-heading").empty();
     })
     $.ajax({
         url: imageQuery,
         method: "GET"
     }).then(function(result){
         console.log(result);
-    })
+        var image = $("<img>").attr("src", result.hits[0].webformatURL);
+        $(".image-div").empty();
+        $(".image-div").append(image);
+    });
+    function insult(){
+        var totalFat = response.hits[0].fields.nf_total_fat;
+        var cholesterol = response.hits[0].fields.nf_cholesterol/10+3;
+        var sodium = response.hits[0].fields.nf_sodium/80+3;
+        var carbohydrate = response.hits[0].fields.nf_total_carbohydrate/5+3;
+        if(searchTerm === "dragonfruit"){
+            var insult = $("<p>");
+            insult.text(insultAndyMuller);
+            $(".insult-div").empty();
+            $(".insult-div").append(insult);
+        }else if(totalFat, cholesterol, sodium, carbohydrate >= 13){
+            if(totalFat >= cholesterol, sodium, carbohydrate){
+                var insult = $("<p>");
+                insult.text(insultUnhealthy.hiFat);
+                $(".insult-div").empty();
+                $(".insult-div").append(insult);
+            }else if(cholesterol >= totalFat, sodium, carbohydrate){
+                var insult = $("<p>");
+                insult.text(insultUnhealthy.hiCholesterol);
+                $(".insult-div").empty();
+                $(".insult-div").append(insult);
+            }else if(sodium >= totalFat, cholesterol, carbohydrate){
+                var insult = $("<p>");
+                insult.text(insultUnhealthy.hiSodium);
+                $(".insult-div").empty();
+                $(".insult-div").append(insult);
+            }else if(carbohydrate >= totalFat, sodium, cholesterol){
+                var insult = $("<p>");
+                insult.text(insultUnhealthy.hiCarbs);
+                $(".insult-div").empty();
+                $(".insult-div").append(insult);
+            }
+        }else if(totalFat, cholesterol, sodium, carbohydrate < 13){
+            if(totalFat <= cholesterol, sodium, carbohydrate){
+                var insult = $("<p>");
+                insult.text(insultUnhealthy.lowFat);
+                $(".insult-div").empty();
+                $(".insult-div").append(insult); 
+            }else if(cholesterol <= totalFat, sodium, carbohydrate){
+                var insult = $("<p>");
+                insult.text(insultUnhealthy.lowCholesterol);
+                $(".insult-div").empty();
+                $(".insult-div").append(insult);
+            }else if(sodium <= totalFat, cholesterol, carbohydrate){
+                var insult = $("<p>");
+                insult.text(insultUnhealthy.lowSodium);
+                $(".insult-div").empty();
+                $(".insult-div").append(insult);
+            }else if(carbohydrate <= totalFat, sodium, cholesterol){
+                var insult = $("<p>");
+                insult.text(insultUnhealthy.lowCarbs);
+                $(".insult-div").empty();
+                $(".insult-div").append(insult);
+            }
+        }
+    }insult();
 }
+$("#search-button").one('click', function(){
+    $(".inner-cover").animate({bottom: "+=300px", left: "-=60px"});
+    $(".data-div").animate({ left: "+=840px"});
+    $(".image-div").animate({ left: "+=500px"});
+})
 $("#search-button").click(function(event){
     event.preventDefault();
-    $(".inner-cover").animate({ top: "-= 200"}, "normal");
     var searchTerm = $("#food-search").val().trim();
     displayNutrition(searchTerm);
+    
 })

@@ -87,15 +87,14 @@ margin-bottom: 2rem;
 }
 
 .masthead-brand {
-margin-top: 50px;
-margin-bottom: 0;
-position: relative;
-bottom: 200px;
-/*left: 890px;*/
- font-family: sans-serif;
-text-align: right;
-
-
+  margin-top: 150px;
+  margin-bottom: 0;
+  position: relative;
+  bottom: 300px;
+  /* left: 890px; */
+  font-family: sans-serif;
+  text-align: right;
+  margin-right: 100px;
 }
 
 .nav-masthead .nav-link {
@@ -132,6 +131,112 @@ position: relative;
 left:250px;
 
 }
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  height: 300px;
+  left: px;
+  position: relative;
+  right: 340px;
+  bottom: 190px;
+}
+
+.image-div {
+  max-height: 100px;
+  max-width: 100px;
+  margin: 0;
+  padding: 0;
+  position: absolute; 
+  bottom: 160px;
+  right: 1060px;
+}
+
+.data-div {
+  height: 390px;
+  width: 380px;
+  margin: 0;
+  padding: 0;
+  position: absolute; 
+  bottom: 160px;
+  right: 960px;
+
+}
+
+.insult-div {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  padding: 0;
+  position: absolute; 
+  bottom: 120px;
+  right: 506px;
+
+}
+
+.scale-in-ver-center {
+	-webkit-animation: scale-in-ver-center 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-ver-center 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-ver-center {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-ver-center {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+
+
+.flip-in-hor-top {
+	-webkit-animation: flip-in-hor-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes flip-in-hor-top {
+  0% {
+    -webkit-transform: rotateX(-80deg);
+            transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@keyframes flip-in-hor-top {
+  0% {
+    -webkit-transform: rotateX(-80deg);
+            transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+
 
 .slide-in-top {
 	-webkit-animation: slide-in-top .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0s ;
@@ -292,11 +397,60 @@ font-weight: bold;
 color: rgba(255,255,255,.5);
 }
 
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) { 
+
+    .text-focus-in{
+      width: 400px;
+      text-align: center;
+      margin: auto;
+      font-size: medium;
+    }
+
+    h1 {
+      text-align: center;
+      /* right: 96px; */
+      margin-bottom: 30px;
+      margin-right: 20px;
+      font-family: "Palatino";
+  }
+
+  .masthead-brand {
+    margin-right: 140px;
+    margin-top: 100px;
+    margin-bottom: 0;
+    position: relative;
+    bottom: 50px;
+    /* left: 890px; */
+    font-family: sans-serif;
+    text-align: right;
+    
+}
+
+  .inner-cover {
+    position: absolute;
+    left: 250px;
+    bottom: 200px;
+    height: 400px;
+    width: 400px;
+  }
+
+  .form-control {
+    width: 400px;
+    position: relative;
+    margin: auto;
+    /* padding-left: 90px; */
+  }
+
+
+  }
+
 
 
 
 /*@media (min-width: 40em) {
-
 .masthead {
   position: fixed;
   top: 0;
@@ -305,11 +459,9 @@ color: rgba(255,255,255,.5);
   position: fixed;
   bottom: 0;
 }
-
 .site-wrapper-inner {
   vertical-align: middle;
 }
-
 .masthead,
 .mastfoot,
 .cover-container {
@@ -353,7 +505,7 @@ color: rgba(255,255,255,.5);
     margin-top: 20px;
     margin-bottom: 0;
     position: relative;
-    bottom: 300px;
+    bottom: 400px;
     /* left: 890px; */
     font-family: sans-serif;
     text-align: right;
@@ -395,15 +547,14 @@ color: rgba(255,255,255,.5);
   }
 
   .masthead-brand {
-    margin-right: 140px;
-    margin-top: 100px;
-    margin-bottom: 0;
+    margin-right: 30px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     position: relative;
     bottom: 200px;
     /* left: 890px; */
     font-family: sans-serif;
     text-align: right;
-    
 }
 
   .inner-cover {
@@ -418,106 +569,19 @@ color: rgba(255,255,255,.5);
     /* padding-left: 90px; */
   }
 
-
-  }
-
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-    .bg {
-      background: url("../images/food-image\ \(3\).jpg") no-repeat center center fixed; 
-      background-color: #f5f9fa;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      height: 667px;
-    }
-    
-    .text-focus-in{
-      width: 400px;
-      text-align: center;
-      margin: auto;
-      font-size: medium;
-    }
-
-    .masthead-brand {
-      margin-left: 350px;
-      margin-bottom: 0;
-      position: relative;
-      bottom: 400px;
-      /* left: 890px; */
-      font-family: sans-serif;
-      text-align: center;
-  }
-
-    .form-control {
-      width: 400px;
-      position: relative;
-      margin: auto;
-    }
-
-    .inner-cover {
-      position: relative;
-      left: 180px;
-      /* background-color: rgba(255,255,255,.5); */
-  }
-  }
-/* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-    
+  .data-div {
+    height: 300px;
+    width: 380px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 160px;
+    right: 960px;
+   margin-left: 50px;
 }
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-
-    .bg {
-      background: url("../images/food-image\ \(3\).jpg") no-repeat center center fixed; 
-      background-color: #f5f9fa;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      height: 667px;
-    }
-    
-    .text-focus-in{
-      width: 400px;
-      text-align: center;
-      margin: auto;
-      font-size: medium;
-    }
-
-    .masthead-brand {
-      margin-left: 350px;
-      margin-bottom: 0;
-      position: relative;
-      bottom: 60px;
-      /* left: 890px; */
-      font-family: sans-serif;
-      text-align: center;
-  }
-
-    .form-control {
-      width: 400px;
-      position: relative;
-      margin: auto;
-    }
-
-    .inner-cover {
-      position: relative;
-      left: 180px;
-  }
+img {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 400px;
 }
+  }
