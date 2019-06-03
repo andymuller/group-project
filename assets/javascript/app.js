@@ -74,6 +74,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                         $(".insult-div").append(insult);
                     }
                 }else if(insultFat < 12 && insultCholesterol * 10 < 12 && insultSodium < 12 && insultCarbohydrate < 12){
+                    $(".insult-div").empty();
                     if(insultFat <= insultCholesterol * 10 && insultFat <= insultSodium && insultFat <= insultCarbohydrate){
                         insult.text(insultsHealthy.lowFat);
                         $(".insult-div").empty();
