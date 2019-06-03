@@ -51,7 +51,6 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         $(".image-div").empty();
         $(".image-div").append(image);
     });
-    function insult(){
         var totalFat = response.hits[0].fields.nf_total_fat;
         var cholesterol = response.hits[0].fields.nf_cholesterol/10+3;
         var sodium = response.hits[0].fields.nf_sodium/80+3;
@@ -107,7 +106,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
             }
         }
     }
-}
+
 $("#search-button").one('click', function(){
     $(".inner-cover").animate({bottom: "+=300px", left: "-=60px"});
     $(".data-div").animate({ left: "+=840px"});
