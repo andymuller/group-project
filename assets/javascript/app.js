@@ -42,9 +42,9 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol, sodium,
             carbohydrate, fiber, sugar, protein);
                 var insultFat = response.hits[0].fields.nf_total_fat;
-                var insultCholesterol = response.hits[0].fields.nf_cholesterol;
-                var insultSodium = response.hits[0].fields.nf_sodium / 20;
-                var insultCarbohydrate = response.hits[0].fields.nf_total_carbohydrate;
+                var insultCholesterol = response.hits[0].fields.nf_cholesterol / 10;
+                var insultSodium = response.hits[0].fields.nf_sodium / 15;
+                var insultCarbohydrate = response.hits[0].fields.nf_total_carbohydrate / 2;
                 var insult = $("<p>");
                 console.log(insultFat);
                 console.log(insultCholesterol);
