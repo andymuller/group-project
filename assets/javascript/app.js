@@ -73,20 +73,20 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
                     }
-                }else if(insultFat < 12 && insultCholesterol < 12 && insultSodium < 12 && insultCarbohydrate < 12){
-                    if(insultFat <= insultCholesterol && insultFat <= insultSodium && insultFat <= insultCarbohydrate){
+                }else if(insultFat < 12 && insultCholesterol * 10 < 12 && insultSodium < 12 && insultCarbohydrate < 12){
+                    if(insultFat <= insultCholesterol * 10 && insultFat <= insultSodium && insultFat <= insultCarbohydrate){
                         insult.text(insultsHealthy.lowFat);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult); 
-                    }else if(insultCholesterol < insultFat && insultCholesterol <= insultSodium && insultCholesterol <= insultCarbohydrate){
+                    }else if(insultCholesterol * 10 < insultFat && insultCholesterol * 10 <= insultSodium && insultCholesterol * 10 <= insultCarbohydrate){
                         insult.text(insultsHealthy.lowCholesterol);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(insultSodium < insultFat && insultSodium < insultCholesterol && insultSodium <= insultCarbohydrate){
+                    }else if(insultSodium < insultFat && insultSodium < insultCholesterol * 10 && insultSodium <= insultCarbohydrate){
                         insult.text(insultsHealthy.lowSodium);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(insultCarbohydrate < insultFat && insultCarbohydrate < insultSodium && insultCarbohydrate < insultCholesterol){
+                    }else if(insultCarbohydrate < insultFat && insultCarbohydrate < insultSodium && insultCarbohydrate < insultCholesterol * 10){
                         insult.text(insultsHealthy.lowCarbs);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
