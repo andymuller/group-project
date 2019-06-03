@@ -45,6 +45,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                 var insultCholesterol = response.hits[0].fields.nf_cholesterol;
                 var insultSodium = response.hits[0].fields.nf_sodium;
                 var insultCarbohydrate = response.hits[0].fields.nf_total_carbohydrate;
+                var insult = $("<p>");
                 console.log(insultFat);
                 console.log(insultCholesterol);
                 console.log(insultSodium);
@@ -52,22 +53,22 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                 if(insultFat>=13 || insultCholesterol>=13 || insultSodium>=13 || insultCarbohydrate >= 13){
                     $(".insult-div").empty();
                     if(insultFat > insultCholesterol && insultFat > insultSodium && insultFat > insultCarbohydrate){
-                        var insult = $("<p>");
+                        
                         insult.text(insultsUnhealthy.hiFat);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
                     }else if(insultCholesterol > insultFat && insultCholesterol > insultSodium && insultCholesterol > insultCarbohydrate){
-                        var insult = $("<p>");
+                        
                         insult.text(insultsUnhealthy.hiCholesterol);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
                     }else if(insultSodium > insultFat && insultSodium > insultCholesterol && insultSodium > insultCarbohydrate){
-                        var insult = $("<p>");
+                        
                         insult.text(insultsUnhealthy.hiSodium);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
                     }else if(insultCarbohydrate > insultFat && insultCarbohydrate > insultSodium && insultCarbohydrate > insultCholesterol){
-                        var insult = $("<p>");
+                        
                         insult.text(insultsUnhealthy.hiCarbs);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
