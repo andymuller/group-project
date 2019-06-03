@@ -41,63 +41,62 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         $(".data-div").empty();
         $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol, sodium,
             carbohydrate, fiber, sugar, protein);
-            function insult(){
-                var totalFat = response.hits[0].fields.nf_total_fat;
-                var cholesterol = response.hits[0].fields.nf_cholesterol;
-                var sodium = response.hits[0].fields.nf_sodium;
-                var carbohydrate = response.hits[0].fields.nf_total_carbohydrate;
-                console.log(totalFat);
-                console.log(cholesterol);
-                console.log(sodium);
-                console.log(carbohydrate);
-                if(totalFat>=13 || cholesterol>=13 || sodium>=13 || carbohydrate >= 13){
+                var insultFat = response.hits[0].fields.nf_total_fat;
+                var insultCholesterol = response.hits[0].fields.nf_cholesterol;
+                var insultSodium = response.hits[0].fields.nf_sodium;
+                var insultCarbohydrate = response.hits[0].fields.nf_total_carbohydrate;
+                console.log(insultFat);
+                console.log(insultCholesterol);
+                console.log(insultSodium);
+                console.log(insultCarbohydrate);
+                if(insultFat>=13 || insultCholesterol>=13 || insultSodium>=13 || insultCarbohydrate >= 13){
                     $(".insult-div").empty();
-                    if(totalFat > cholesterol && totalFat > sodium && totalFat > carbohydrate){
+                    if(insultFat > insultCholesterol && insultFat > insultSodium && insultFat > insultCarbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsUnhealthy.hiFat);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(cholesterol > totalFat && cholesterol > sodium && cholesterol > carbohydrate){
+                    }else if(insultCholesterol > insultFat && insultCholesterol > insultSodium && insultCholesterol > insultCarbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsUnhealthy.hiCholesterol);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(sodium > totalFat && sodium > cholesterol && sodium > carbohydrate){
+                    }else if(insultSodium > insultFat && insultSodium > insultCholesterol && insultSodium > insultCarbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsUnhealthy.hiSodium);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(carbohydrate > totalFat && carbohydrate > sodium && carbohydrate > cholesterol){
+                    }else if(insultCarbohydrate > insultFat && insultCarbohydrate > insultSodium && insultCarbohydrate > insultCholesterol){
                         var insult = $("<p>");
                         insult.text(insultsUnhealthy.hiCarbs);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
                     }
-                }else if(totalFat && cholesterol && sodium && carbohydrate < 13){
-                    if(totalFat <= cholesterol && sodium && carbohydrate){
+                }else if(insultFat && insultCholesterol && insultSodium && insultCarbohydrate < 13){
+                    if(insultFat <= insultCholesterol && insultSodium && insultCarbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsHealthy.lowFat);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult); 
-                    }else if(cholesterol <= totalFat && sodium && carbohydrate){
+                    }else if(insultCholesterol <= insultFat && insultSodium && insultCarbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsHealthy.lowCholesterol);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(sodium <= totalFat && cholesterol && carbohydrate){
+                    }else if(insultSodium <= insultFat && insultCholesterol && insultCarbohydrate){
                         var insult = $("<p>");
                         insult.text(insultsHealthy.lowSodium);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
-                    }else if(carbohydrate <= totalFat && sodium && cholesterol){
+                    }else if(insultCarbohydrate <= insultFat && insultSodium && insultCholesterol){
                         var insult = $("<p>");
                         insult.text(insultsHealthy.lowCarbs);
                         $(".insult-div").empty();
                         $(".insult-div").append(insult);
                     }
                 }
-            }insult(food);
-        }
+            }
+        
     );
     $.ajax({
         url: imageQuery,
