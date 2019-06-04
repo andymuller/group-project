@@ -1,618 +1,133 @@
-.bg {
-  background: url("../images/food-image\ \(2\).jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+var insultsUnhealthy = {
+    hiFat: "When my car hit you in the crosswalk, you asked if I was okay.",
+    hiCholesterol: "I passed by you three times.",
+    hiCarbs: "Get out of the doorframes.",
+    hiSodium: "The Dead Sea has turned into a human.",
 }
-
-
-h1 {
-  text-align: center;
-  right: 97px;
-  margin-bottom: 30px;
-  font-family: "Palatino";
-
+var insultsHealthy = {
+    lowFat: "Where did the wind take you today?",
+    lowCholesterol: "Nobody appreciates your flatulence.",
+    lowCarbs: "Halloween doesn't scare you, but Trick-or-Treating is a different story.",
+    lowSodium: "I don't know how to insult someone so tasteless.",
 }
+var nutritionixAPI = "43a4724158ea08c8e5b9070c4f8ecd5f";
 
-p.lead {
-margin-bottom: 30px;
-}
+var insultAndyMuller = "Andy, nobody cares about what you eat in class.";
+var pixabayAPI = "12579168-7c66fd8723598ff87605657fc";
 
-.text-focus-in{
-  width: 600px;
-  text-align: center;
-  margin: auto;
-}
 
 
-
-a,
-a:focus,
-a:hover {
-color: #fff;
-}
-
-
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-color: #333;
-text-shadow: none; 
-background-color: #fff;
-border: .05rem solid rgb(2, 2, 2);
-}
-
-
-
-
-html,
-
-body {
-color: black;
-text-align: center;
-/*text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);*/
-height: 100%;
-
-}
-
-
-.site-wrapper {
-display: table;
-position: fixed;
-width: 100%;
-min-height: 100%;
--webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-        box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-display: table-cell;
-vertical-align: middle;
-}
-.cover-container {
-margin-right: auto;
-margin-left: auto;
-}
-
-
-.inner {
-padding: 2rem;
-}
-
-
-
-
-.masthead {
-margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-top: 150px;
-  margin-bottom: 0;
-  position: relative;
-  bottom: 300px;
-  /* left: 890px; */
-  font-family: sans-serif;
-  text-align: right;
-  margin-right: 100px;
-}
-
-.nav-masthead .nav-link {
-padding: .25rem 0;
-font-weight: bold;
-color: rgba(255,255,255,.5);
-background-color: transparent;
-border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-border-bottom-color: rgba(255,255,255,.25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-margin-left: 1rem;
-}
-
-.nav-masthead .active {
-color: #fff;
-border-bottom-color: #fff;
-}
-
-.form-control {
-width: 700px;
-position: relative;
-margin: auto;
-}
-
-.inner-cover {
-
-position: relative;
-left:250px;
-
-}
-
-img {
-  vertical-align: middle;
-  border-style: none;
-  height: 300px;
-  max-width: 400px;
-  left: px;
-  position: relative;
-  right: 300px;
-  bottom: 200px;
-  object-fit: cover;
-}
-
-.image-div {
-  max-height: 100px;
-  max-width: 100px;
-  margin: 0;
-  padding: 0;
-  position: absolute; 
-  bottom: 160px;
-  right: 1060px;
-}
-
-.data-div {
-  height: 390px;
-  width: 380px;
-  margin: 0;
-  padding: 0;
-  position: absolute; 
-  bottom: 100px;
-  right: 960px;
-
-}
-
-.insult-div {
-  height: 30px;
-  width: 300px;
-  margin: 0;
-  padding: 0;
-  position: absolute; 
-  bottom: 120px;
-  right: 506px;
-
-}
-
-.blur-out-contract {
-	-webkit-animation: blur-out-contract 1.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s reverse both;
-	        animation: blur-out-contract 1.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s reverse both;
-}
-
- @-webkit-keyframes blur-out-contract {
-  0% {
-    -webkit-filter: blur(0.01);
-            filter: blur(0.01);
-  }
-  100% {
-    letter-spacing: -0.5em;
-    -webkit-filter: blur(12px) opacity(0%);
-            filter: blur(12px) opacity(0%);
-  }
-}
-@keyframes blur-out-contract {
-  0% {
-    -webkit-filter: blur(0.01);
-            filter: blur(0.01);
-  }
-  100% {
-    letter-spacing: -0.5em;
-    -webkit-filter: blur(12px) opacity(0%);
-            filter: blur(12px) opacity(0%);
-  }
-}
-
-
-.scale-in-ver-center {
-	-webkit-animation: scale-in-ver-center 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: scale-in-ver-center 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes scale-in-ver-center {
-  0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-    opacity: 1;
-  }
-}
-@keyframes scale-in-ver-center {
-  0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-    opacity: 1;
-  }
-}
-
-
-
-.flip-in-hor-top {
-	-webkit-animation: flip-in-hor-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: flip-in-hor-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes flip-in-hor-top {
-  0% {
-    -webkit-transform: rotateX(-80deg);
-            transform: rotateX(-80deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-    opacity: 1;
-  }
-}
-@keyframes flip-in-hor-top {
-  0% {
-    -webkit-transform: rotateX(-80deg);
-            transform: rotateX(-80deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-    opacity: 1;
-  }
-}
-
-
-
-.slide-in-top {
-	-webkit-animation: slide-in-top .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0s ;
-	        animation: slide-in-top .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0s ;
-}
-
-@-webkit-keyframes slide-in-top {
-  0% {
-    -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-top {
-  0% {
-    -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-
-
-.slide-in-bottom {
-	-webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s both;
-	        animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s both;
-}
-.slide-b {
-  -webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
-  animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
-}
-
-@-webkit-keyframes slide-in-bottom {
-  0% {
-    -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-bottom {
-  0% {
-    -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-
-.slide-in-left {
-	-webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s both;
-	        animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s both;
-}
-
-@-webkit-keyframes slide-in-left {
-  0% {
-    -webkit-transform: translateX(-1000px);
-            transform: translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-left {
-  0% {
-    -webkit-transform: translateX(-1000px);
-            transform: translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-
-.text-focus-in {
-	-webkit-animation: text-focus-in 1.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s both;
-	        animation: text-focus-in 1.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s both;
-}
-
-@-webkit-keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-@keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-
-
-
-
-/*@media (min-width: 48em) {
-.masthead-brand {
-  float: left;
-}
-.nav-masthead {
-  float: right;
-}
-}*/
-
-
-
-
-.cover {
-padding: 0 1.5rem;
-}
-.cover .btn-lg {
-padding: .75rem 1.25rem;
-font-weight: bold;
-}
-
-
-
-
-.mastfoot {
-color: rgba(255,255,255,.5);
-}
-
-@media only screen 
-and (min-device-width : 375px) 
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) { 
-
-    .text-focus-in{
-      width: 400px;
-      text-align: center;
-      margin: auto;
-      font-size: medium;
-    }
-
-    h1 {
-      text-align: center;
-      /* right: 96px; */
-      margin-bottom: 30px;
-      margin-right: 20px;
-      font-family: "Palatino";
-  }
-
-  .masthead-brand {
-    margin-right: 140px;
-    margin-top: 100px;
-    margin-bottom: 0;
-    position: relative;
-    bottom: 50px;
-    /* left: 890px; */
-    font-family: sans-serif;
-    text-align: right;
+function displayNutrition(food){
     
-}
+var imageQuery = "https://pixabay.com/api/?key=12579168-7c66fd8723598ff87605657fc&q="+food+"&image_type=photo&category=food";
+var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0%3A20&cal_min=0&cal_max=50000&fields=*&appId=c3659b4f&appKey=43a4724158ea08c8e5b9070c4f8ecd5f";
+    $.ajax({
+        url: nutritionQuery,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+        console.log(response.hits[0].fields.item_name);
 
-  .inner-cover {
-    position: absolute;
-    left: 250px;
-    bottom: 200px;
-    height: 400px;
-    width: 400px;
-  }
-
-  .form-control {
-    width: 400px;
-    position: relative;
-    margin: auto;
-    /* padding-left: 90px; */
-  }
-
-
-  }
-
-
-
-
-/*@media (min-width: 40em) {
-.masthead {
-  position: fixed;
-  top: 0;
-}
-.mastfoot {
-  position: fixed;
-  bottom: 0;
-}
-.site-wrapper-inner {
-  vertical-align: middle;
-}
-.masthead,
-.mastfoot,
-.cover-container {
-  width: 100%; 
-}
-}*/
-
-/*@media (min-width: 62em) {
-.masthead,
-.mastfoot,
-.cover-container {
-  width: 42rem;
-}
-}*/
-
-/*media queries Tablet */
-
-/*portrait mode */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-    .text-focus-in{
-      width: 400px;
-      text-align: center;
-      margin: auto;
-      font-size: medium;
-    }
-
-    h1 {
-      text-align: center;
-      /* right: 96px; */
-      margin-bottom: 30px;
-      margin-right: 20px;
-      font-family: "Palatino";
-  }
-
-  .masthead-brand {
-    margin-right: 80px;
-    margin-top: 20px;
-    margin-bottom: 0;
-    position: relative;
-    bottom: 400px;
-    /* left: 890px; */
-    font-family: sans-serif;
-    text-align: right;
+        var foodName = $("<p>").text(response.hits[0].fields.item_name);
+        var calories = $("<p>").text("Calories: "+response.hits[0].fields.nf_calories);
+        var totalFat = $("<p>").text("Total Fat: "+response.hits[0].fields.nf_total_fat+"g");
+        var saturatedFat = $("<p>").text("Saturated Fat: "+response.hits[0].fields.nf_saturated_fat+"g");
+        var cholesterol = $("<p>").text("Cholesterol: "+response.hits[0].fields.nf_cholesterol+"mg");
+        var sodium = $("<p>").text("Sodium: "+response.hits[0].fields.nf_sodium+"mg");
+        var carbohydrate = $("<p>").text("Total Carbohydrates: "+response.hits[0].fields.nf_total_carbohydrate+"g");
+        var fiber = $("<p>").text("Dietary Fiber: "+response.hits[0].fields.nf_dietary_fiber+"g");
+        var sugar = $("<p>").text("Sugars: "+response.hits[0].fields.nf_sugars+"g");
+        var protein = $("<p>").text("Protein: "+response.hits[0].fields.nf_protein+"g");
+        foodName.addClass("scale-in-ver-center");
+        calories.addClass("scale-in-ver-center");
+        totalFat.addClass("scale-in-ver-center");
+        saturatedFat.addClass("scale-in-ver-center");
+        cholesterol.addClass("scale-in-ver-center");
+        sodium.addClass("scale-in-ver-center");
+        carbohydrate.addClass("scale-in-ver-center");
+        fiber.addClass("scale-in-ver-center");
+        sugar.addClass("scale-in-ver-center");
+        protein.addClass("scale-in-ver-center");
+        $(".text-focus-in").empty();
+        $(".cover-heading").empty();
+        $(".data-div").empty();
+        $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol, sodium,
+            carbohydrate, fiber, sugar, protein);
+                var insultFat = response.hits[0].fields.nf_total_fat;
+                var insultCholesterol = response.hits[0].fields.nf_cholesterol;
+                var insultSodium = response.hits[0].fields.nf_sodium / 20;
+                var insultCarbohydrate = response.hits[0].fields.nf_total_carbohydrate;
+                var insult = $("<p>");
+                console.log(insultFat);
+                console.log(insultCholesterol);
+                console.log(insultSodium);
+                console.log(insultCarbohydrate);
+                if(food === "dragonfruit"){
+                    insult.text(insultAndyMuller);
+                    $(".insult-div").empty();
+                    $(".insult-div").append(insult);
+                }else if(insultFat >= 12 || insultCholesterol >= 12 || insultSodium >= 12 || insultCarbohydrate >= 12){
+                    $(".insult-div").empty();
+                    if(insultFat > insultCholesterol && insultFat > insultSodium && insultFat > insultCarbohydrate){
+                        insult.text(insultsUnhealthy.hiFat);
+                        $(".insult-div").empty();
+                        $(".insult-div").append(insult);
+                    }else if(insultCholesterol > insultFat && insultCholesterol > insultSodium && insultCholesterol > insultCarbohydrate){
+                        insult.text(insultsUnhealthy.hiCholesterol);
+                        $(".insult-div").empty();
+                        $(".insult-div").append(insult);
+                    }else if(insultSodium > insultFat && insultSodium > insultCholesterol && insultSodium > insultCarbohydrate){
+                        insult.text(insultsUnhealthy.hiSodium);
+                        $(".insult-div").empty();
+                        $(".insult-div").append(insult);
+                    }else if(insultCarbohydrate > insultFat && insultCarbohydrate > insultSodium && insultCarbohydrate > insultCholesterol){
+                        insult.text(insultsUnhealthy.hiCarbs);
+                        $(".insult-div").empty();
+                        $(".insult-div").append(insult);
+                    }
+                }else if(insultFat < 12 && insultCholesterol < 12 && insultSodium < 12 && insultCarbohydrate < 12){
+                    $(".insult-div").empty();
+                    if(insultFat <= insultCholesterol && insultFat <= insultSodium && insultFat <= insultCarbohydrate){
+                        insult.text(insultsHealthy.lowFat);
+                        $(".insult-div").empty();
+                        $(".insult-div").append(insult); 
+                    }else if(insultCholesterol < insultFat && insultCholesterol <= insultSodium && insultCholesterol <= insultCarbohydrate){
+                        insult.text(insultsHealthy.lowCholesterol);
+                        $(".insult-div").empty();
+                        $(".insult-div").append(insult);
+                    }else if(insultSodium < insultFat && insultSodium < insultCholesterol && insultSodium <= insultCarbohydrate){
+                        insult.text(insultsHealthy.lowSodium);
+                        $(".insult-div").empty();
+                        $(".insult-div").append(insult);
+                    }else if(insultCarbohydrate < insultFat && insultCarbohydrate < insultSodium && insultCarbohydrate < insultCholesterol){
+                        insult.text(insultsHealthy.lowCarbs);
+                        $(".insult-div").empty();
+                        $(".insult-div").append(insult);
+                       
+                    }
+                }
+                
+            }
+        
+    );
+    $.ajax({
+        url: imageQuery,
+        method: "GET"
+    }).then(function(result){
+        console.log(result);
+        var image = $("<img>").attr("src", result.hits[0].webformatURL);
+        $(".image-div").empty();
+        $(".image-div").append(image);
+    });
+};        
+$("#search-button").one('click', function(){
+    $(".inner-cover").animate({bottom: "+=300px", left: "-=60px"});
+    $(".data-div").animate({ left: "+=840px"});
+    $(".image-div").animate({ left: "+=500px"});
+})
+$("#search-button").click(function(event){
+    event.preventDefault();
+    var searchTerm = $("#food-search").val().trim();
+    displayNutrition(searchTerm);
     
-}
-
-  .inner-cover {
-    position: relative;
-    left: 150px;
-  }
-
-  .form-control {
-    width: 400px;
-    position: relative;
-    margin: auto;
-    /* padding-left: 90px; */
-  }
-}
-
-/* Tablet Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-    .text-focus-in{
-      width: 400px;
-      text-align: center;
-      margin: auto;
-      font-size: medium;
-    }
-
-    h1 {
-      text-align: center;
-      /* right: 96px; */
-      margin-bottom: 30px;
-      margin-right: 20px;
-      font-family: "Palatino";
-  }
-
-  .masthead-brand {
-    margin-right: 30px;
-    margin-top: 70px;
-    margin-bottom: 70px;
-    position: relative;
-    bottom: 200px;
-    /* left: 890px; */
-    font-family: sans-serif;
-    text-align: right;
-}
-
-  .inner-cover {
-    position: relative;
-    left: 150px;
-  }
-
-  .form-control {
-    width: 400px;
-    position: relative;
-    margin: auto;
-    /* padding-left: 90px; */
-  }
-
-  .data-div {
-    height: 300px;
-    width: 380px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    bottom: 160px;
-    right: 960px;
-   margin-left: 50px;
-}
-img {
-  vertical-align: middle;
-  border-style: none;
-  max-width: 400px;
-}
-  }
+});
