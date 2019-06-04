@@ -51,7 +51,7 @@ html,
 body {
 color: black;
 text-align: center;
-text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+/*text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);*/
 height: 100%;
 
 }
@@ -136,10 +136,12 @@ img {
   vertical-align: middle;
   border-style: none;
   height: 300px;
+  max-width: 400px;
   left: px;
   position: relative;
-  right: 340px;
-  bottom: 190px;
+  right: 300px;
+  bottom: 200px;
+  object-fit: cover;
 }
 
 .image-div {
@@ -158,14 +160,14 @@ img {
   margin: 0;
   padding: 0;
   position: absolute; 
-  bottom: 160px;
+  bottom: 100px;
   right: 960px;
 
 }
 
 .insult-div {
   height: 30px;
-  width: 30px;
+  width: 300px;
   margin: 0;
   padding: 0;
   position: absolute; 
@@ -173,6 +175,35 @@ img {
   right: 506px;
 
 }
+
+.blur-out-contract {
+	-webkit-animation: blur-out-contract 1.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s reverse both;
+	        animation: blur-out-contract 1.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s reverse both;
+}
+
+ @-webkit-keyframes blur-out-contract {
+  0% {
+    -webkit-filter: blur(0.01);
+            filter: blur(0.01);
+  }
+  100% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px) opacity(0%);
+            filter: blur(12px) opacity(0%);
+  }
+}
+@keyframes blur-out-contract {
+  0% {
+    -webkit-filter: blur(0.01);
+            filter: blur(0.01);
+  }
+  100% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px) opacity(0%);
+            filter: blur(12px) opacity(0%);
+  }
+}
+
 
 .scale-in-ver-center {
 	-webkit-animation: scale-in-ver-center 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
