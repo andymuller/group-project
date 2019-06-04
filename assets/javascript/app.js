@@ -38,6 +38,16 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
         var fiber = $("<p>").text("Dietary Fiber: "+response.hits[0].fields.nf_dietary_fiber+"g");
         var sugar = $("<p>").text("Sugars: "+response.hits[0].fields.nf_sugars+"g");
         var protein = $("<p>").text("Protein: "+response.hits[0].fields.nf_protein+"g");
+        foodName.addClass("scale-in-ver-center");
+        calories.addClass("scale-in-ver-center");
+        totalFat.addClass("scale-in-ver-center");
+        saturatedFat.addClass("scale-in-ver-center");
+        cholesterol.addClass("scale-in-ver-center");
+        sodium.addClass("scale-in-ver-center");
+        carbohydrate.addClass("scale-in-ver-center");
+        fiber.addClass("scale-in-ver-center");
+        sugar.addClass("scale-in-ver-center");
+        protein.addClass("scale-in-ver-center");
         $(".data-div").empty();
         $(".data-div").append(foodName, calories, totalFat, saturatedFat, cholesterol, sodium,
             carbohydrate, fiber, sugar, protein);
@@ -46,6 +56,7 @@ var nutritionQuery = "https://api.nutritionix.com/v1_1/search/"+food+"?results=0
                 var insultSodium = response.hits[0].fields.nf_sodium / 20;
                 var insultCarbohydrate = response.hits[0].fields.nf_total_carbohydrate;
                 var insult = $("<p>");
+                insult.addClass("blur-out-contract");
                 console.log(insultFat);
                 console.log(insultCholesterol);
                 console.log(insultSodium);
